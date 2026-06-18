@@ -1,0 +1,35 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 60px;
+  background-color: #f5f8ff;
+}
+
+.logo {
+  font-weight: bold;
+  color: #1f3c88;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+.login-btn {
+  background: #2d6cdf;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 6px;
+}
+
+.signup-btn {
+  color: #2d6cdf;
+  font-weight: 600;
+}
+.nav-link {
+  text-decoration: none;
+  color: inherit;
+}
