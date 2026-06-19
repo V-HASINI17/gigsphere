@@ -8,7 +8,8 @@ function PostGig() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    await axios.post("http://localhost:5000/api/gigs", {
+    const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000/api";
+    await axios.post(`${API_URL}/gigs`, {
       title,
       description
     });
