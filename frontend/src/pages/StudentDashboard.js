@@ -9,7 +9,6 @@ import "leaflet/dist/leaflet.css";
 import { 
   MapPin, 
   Award, 
-  DollarSign, 
   LogOut, 
   Moon, 
   Sun, 
@@ -146,6 +145,7 @@ function StudentDashboard() {
       fetchNearbyGigs();
       fetchRecommendations();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [radius, user]);
 
   const handleApply = async (gigId) => {
