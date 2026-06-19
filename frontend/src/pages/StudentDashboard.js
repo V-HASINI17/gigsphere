@@ -20,9 +20,7 @@ import {
   CheckCircle,
   Clock,
   Navigation,
-  CheckCircle2,
-  XCircle,
-  HelpCircle
+  CheckCircle2
 } from "lucide-react";
 
 // Fix Leaflet marker icons using custom DivIcon with Lucide elements
@@ -79,6 +77,7 @@ function StudentDashboard() {
   const [applying, setApplying] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
+  // eslint-disable-next-line no-unused-vars
   const [loading, setLoading] = useState(false);
 
   const [darkMode, setDarkMode] = useState(() => localStorage.getItem("theme") === "dark");

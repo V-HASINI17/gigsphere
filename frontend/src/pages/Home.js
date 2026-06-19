@@ -11,7 +11,6 @@ import {
   Moon, 
   Sun, 
   Users, 
-  Briefcase, 
   CheckCircle2, 
   HelpCircle 
 } from "lucide-react";

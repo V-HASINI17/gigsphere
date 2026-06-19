@@ -151,6 +151,7 @@ function ChatPage() {
         fetchMessages(initOtherUserId, initGigId);
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [initOtherUserId, initGigId, conversations]);
 
   // ── Open conversation and load messages ──

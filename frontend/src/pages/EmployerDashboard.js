@@ -12,22 +12,15 @@ import {
   MessageSquare, 
   LogOut, 
   Moon, 
-  Sun, 
-  Briefcase, 
-  CheckCircle, 
-  AlertTriangle, 
-  MapPin, 
-  Award, 
   Clock, 
   User, 
-  Send,
   Star,
-  XCircle,
   Play,
   CheckSquare
 } from "lucide-react";
 
 // Fix Leaflet marker icons using custom DivIcon
+// eslint-disable-next-line no-unused-vars
 const createEmployerIcon = () => {
   return new L.DivIcon({
     html: `<div class="flex items-center justify-center w-8 h-8 rounded-full bg-indigo-600 text-white shadow-lg border-2 border-white">
@@ -118,6 +111,7 @@ function EmployerDashboard() {
       setLatitude(employerCoords[0]);
       setLongitude(employerCoords[1]);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
 
   // Fetch employer's posted gigs

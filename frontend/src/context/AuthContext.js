@@ -54,6 +54,7 @@ export const AuthProvider = ({ children }) => {
       newSocket.off("online_users", handleOnlineStatus);
       newSocket.disconnect();
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
 
   // Login handler
