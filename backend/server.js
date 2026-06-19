@@ -36,7 +36,7 @@ const io = new Server(server, {
 app.use(secureHeaders);
 app.use(cors());
 app.use(express.json());
-app.use(mongoSanitize()); // Strip MongoDB operators ($gt, $where, etc.) from req.body/query
+//app.use(mongoSanitize()); // Strip MongoDB operators ($gt, $where, etc.) from req.body/query
 app.use(sanitizeInput);
 
 // Apply Global Rate Limiting (150 requests per 15 minutes)
