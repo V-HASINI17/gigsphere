@@ -12,6 +12,7 @@ function SignupAdmin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [phone, setPhone] = useState("");
+  const [adminSecret, setAdminSecret] = useState("");
   
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -28,7 +29,8 @@ function SignupAdmin() {
       email,
       password,
       phone,
-      role: "admin"
+      role: "admin",
+      adminSecret
     };
 
     try {
@@ -133,6 +135,15 @@ function SignupAdmin() {
             <input 
               type="password" required value={password} onChange={(e) => setPassword(e.target.value)}
               placeholder="Min. 6 characters" 
+              className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-850 focus:outline-none focus:ring-2 focus:ring-amber-500 text-sm transition-all"
+            />
+          </div>
+
+          <div className="space-y-1">
+            <label className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Admin Creation Secret</label>
+            <input 
+              type="password" required value={adminSecret} onChange={(e) => setAdminSecret(e.target.value)}
+              placeholder="Provided by platform owner" 
               className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-850 focus:outline-none focus:ring-2 focus:ring-amber-500 text-sm transition-all"
             />
           </div>

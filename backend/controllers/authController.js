@@ -17,12 +17,19 @@ exports.registerUser = async (req, res) => {
       skills,
       bio,
       businessName,
-      businessLicenseUrl
+      businessLicenseUrl,
+      adminSecret
     } = req.body;
 
-    // Prevent public creation of admin accounts
+    if (!name || !email || !password || !phone || !role) {
+      return res.status(400).json({ message: "Please provide all required fields." });
+    }
+
+    // Secure admin creation
     if (role === "admin") {
-      return res.status(403).json({ message: "Admin accounts cannot be created via public registration." });
+      if (adminSecret !== process.env.ADMIN_SECRET) {
+        return res.status(403).json({ message: "Invalid admin creation secret." });
+      }
     }
 
     const existingUser = await User.findOne({ email });
@@ -99,6 +106,10 @@ exports.registerUser = async (req, res) => {
 exports.loginUser = async (req, res) => {
   try {
     const { email, password } = req.body;
+
+    if (!email || !password) {
+      return res.status(400).json({ message: "Please provide email and password." });
+    }
 
     const user = await User.findOne({ email });
     if (!user) {
